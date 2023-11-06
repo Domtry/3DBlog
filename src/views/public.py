@@ -1,3 +1,5 @@
+import uuid
+
 from flask import (
     Flask,
     render_template,
@@ -62,6 +64,7 @@ def public_router(app: Flask):
         if request.method == 'POST':
             form_data = request.form
             user = UserEntity(
+                id = str(uuid.uuid4()),
                 name = form_data['full_name'],
                 email = form_data['email'],
                 pseudo = form_data['pseudo']
@@ -103,6 +106,7 @@ def public_router(app: Flask):
         if request.method == 'POST':
             form_data = request.form
             model_3d = Model3DEntity(
+                id = str(uuid.uuid4()),
                 label = form_data['label'],
                 image_path = form_data['image_path'],
                 description = form_data['describe'],

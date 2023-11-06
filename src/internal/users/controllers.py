@@ -94,7 +94,7 @@ class UserController:
                 if search_user.badges != user.badges:
                     search_user.badges = user.badges
 
-                response = save(search_user)
+                response = save(db_context, search_user)
             except Exception as error:
                 raise error
             else:

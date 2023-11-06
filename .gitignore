@@ -3,4 +3,5 @@ postgres-data
 .env
 venv
 app.log
-__pycache__
+*__pycache__
+*.pytest_cache

@@ -18,7 +18,7 @@ class Model3dController:
         with DBConnectionHandler() as db_context:
             try:
                 model_3d_model = Model3DModel()
-                model_3d_model.id = str(uuid.uuid4())
+                model_3d_model.id = model_3d.id
                 model_3d_model.label = model_3d.label
                 model_3d_model.image_path = model_3d.image_path
                 model_3d_model.description = model_3d.description
