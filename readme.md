@@ -36,4 +36,4 @@ install project dependencies
 | Get User       | localhost:3000/api/v1/users/{user_id} | **GET**    |
 | Paginate Users | localhost:                            | **GET**    |
 
-NB: for more detail click [3DBlog restapi](localhost:3000/docs#) from docker container
+NB: for more detail click localhost:3000/docs# from docker container
