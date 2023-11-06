@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand me-lg-5 me-0" href="/home">
+            <img src="{{ url_for('static', filename='images/pod-talk-logo.png') }}" class="logo-image img-fluid"
+                alt="templatemo pod talk">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/store">Store</a>
+                </li>
+            </ul>
+            {% if username == "" %}
+                <div class="ms-4">
+                    <a href="/login" class="btn custom-btn custom-border-btn smoothscroll">Login</a>
+                </div>
+            {% else %}
+                <div class="ms-4">
+                    <a href="/logout" class="btn custom-btn custom-border-btn smoothscroll">Logout</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</nav>

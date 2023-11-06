@@ -1,0 +1,15 @@
+./env
+docker-compose.yml
+dockerfile
+.env
+script.hdnb
+script.ipynb
+readme.md
+.gitignore
+./postgres-data
+./.vscode
+exemple_env_file.txt
+model_database.mdj
+db_test.db
+./.git
+./makefile

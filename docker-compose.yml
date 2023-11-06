@@ -1,0 +1,40 @@
+version: '3'
+services:
+  master:
+    container_name: 3DBlog
+    build:
+      context: .
+      dockerfile: dockerfile
+    networks:
+      - default
+    ports:
+      - "3000:3000"
+    environment:
+      - FLASK_ENV=production
+      - FLASK_ENV=dev
+      - FLASK_DEBUG=False
+      - FLASK_APP=src
+      - SECRET_KEY="Dy@3DBl0g"
+      - JWT_SECRET_KEY=""
+      - FLASK_RUN_HOST=0.0.0.0
+      - SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://dycode_user:DyCode123456@localhost:5432/test_db_3d_blog
+      - API_CREDENTIAL_KEY="050eacb9-536b-4b9f-85f9-04e4794fb949"
+      - JWT_ACCESS_TOKEN_EXPIRES = "6"
+      - JWT_REFRESH_TOKEN_EXPIRES = "30"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:12-alpine
+    container_name: postgres_12_alpine
+    ports:
+      - "5454:5432"
+    networks:
+      - default
+    restart: always
+    environment:
+      - POSTGRES_USER=dycode_user
+      - POSTGRES_DB=test_db_3d_blog
+      - POSTGRES_PASSWORD=DyCode123456
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data

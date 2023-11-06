@@ -1,0 +1,54 @@
+{% extends 'layoute/base.html' %}
+{% block body %}
+    {% include 'components/nav.html' %}
+        <header class="site-header d-flex flex-column justify-content-center align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-12 text-center">
+                        <h2 class="mb-0">{{ detail_model.label }}</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="about-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <div class="pb-2 mb-5">
+                            <div class="section-title-wrap mb-4">
+                                <h4 class="section-title">Détail</h4>
+                            </div>
+                            <p>{{ detail_model.description }}</p>
+                            <img src="{{ url_for('static', filename='images/medium-shot-young-people-recording-podcast.jpg') }}"
+                                class="about-image mt-5 img-fluid" alt="">
+                        </div>
+                        <div class="custom-block-bottom d-flex justify-content-center">
+                            <a href="#" class="bi-emoji-heart-eyes me-1">
+                                 <span>{{ detail_model.number_views }}</span>
+                            </a>
+                        </div>
+                        <div class="profile-block profile-detail-block d-flex flex-wrap align-items-center mt-5">
+                            <div class="d-flex mb-3 mb-lg-0 mb-md-0">
+                                <div>
+                                    <img src="{{ url_for('static', filename='images/medium-shot-young-people-recording-podcast.jpg') }}"
+                                         class="profile-block-image img-fluid" alt="">
+                                </div>
+                                <div>
+                                    <p class="m-0">{{ detail_model.user.name }}</p>
+                                    {% for badge in detail_model.user.badges.split(",") %}
+                                        <span class="badge">{{ badge }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <ul class="social-icon ms-lg-auto ms-md-auto">
+                                <li class="social-icon-item">
+                                    <a href="/users/{{ detail_model.user.id }}" class="btn custom-btn custom-border-btn smoothscroll">En savoir plus</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% include 'components/footer.html' %}
+{% endblock %}

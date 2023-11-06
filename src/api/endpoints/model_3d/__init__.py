@@ -1,0 +1,1 @@
+from src.api.endpoints.model_3d.router import model_3d_bp

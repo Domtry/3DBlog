@@ -1,0 +1,69 @@
+{% extends 'layoute/base.html' %}
+{% block body %}
+    {% include 'components/nav.html' %}
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <div class="text-center mb-5 pb-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section section-padding pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12 mx-auto">
+                    {% if message != ""  %}
+                        <div class="col-lg-8 col-12 mx-auto">
+                            <p>{{ message }}</p>
+                        </div>
+                    {% endif %}
+                    <div class="section-title-wrap mb-5">
+                        <h4 class="section-title">Inscription</h4>
+                    </div>
+                    <form action="#" method="post" class="custom-form contact-form" role="form">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" name="full_name" id="full-name" class="form-control" placeholder="Full Name" required="">
+                                            <label for="floatingInput">Full Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
+                                            <label for="floatingInput">Email address</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" name="pseudo" id="pseudo" class="form-control" placeholder="Email address" required="">
+                                            <label for="floatingInput">Pseudo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Email address" required="">
+                                            <label for="floatingInput">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <button type="submit" class="form-control">Register</button>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <a href="/login" class="btn custom-btn custom-border-btn smoothscroll">Login</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'components/footer.html' %}
+{% endblock %}
