@@ -1,5 +1,5 @@
 ## 3DBlog
-![](/Users/mac/Documents/projects/dev/3DBlog/screen_shot.png)
+![](./screen_shot.png)
 
 ### 1. Init project
 ###### Automatic config
