@@ -1,0 +1,1 @@
+from src.views.model_3d.route import model_3d_router

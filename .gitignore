@@ -5,3 +5,4 @@ venv
 app.log
 *__pycache__
 *.pytest_cache
+*.db
